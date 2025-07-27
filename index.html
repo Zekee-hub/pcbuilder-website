@@ -3,71 +3,282 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tailor Made PCs</title>
+  <title>Tailor Made PCs – Custom & Pre‑Built PCs in Herefordshire</title>
+  <meta name="description" content="Tailor Made PCs builds custom and pre-built gaming & creator PCs in Herefordshire. Pay upfront, pickup only. Transparent pricing." />
   <link rel="stylesheet" href="styles.css" />
-  <script src="main.js" defer></script>
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://zekee-hub.github.io/pcbuilder-website/#brand",
+    "name": "Tailor Made PCs",
+    "image": "https://zekee-hub.github.io/pcbuilder-website/assets/og-image.jpg",
+    "url": "https://zekee-hub.github.io/pcbuilder-website/",
+    "telephone": "+44 7376609160",
+    "priceRange": "££",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hereford",
+      "addressRegion": "Herefordshire",
+      "addressCountry": "GB"
+    },
+    "areaServed": "Herefordshire"
+  }
+  </script>
+
+  <!-- Offer Catalog for Pre-Builts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Tailor Made PCs Pre-Built Systems",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Budget Friendly",
+        "priceCurrency": "GBP",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": 700,
+          "maxPrice": 800,
+          "priceCurrency": "GBP"
+        },
+        "description": "Affordable build for casual gaming and everyday use."
+      },
+      {
+        "@type": "Offer",
+        "name": "Mid-High Tier",
+        "priceCurrency": "GBP",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": 1200,
+          "maxPrice": 1600,
+          "priceCurrency": "GBP"
+        },
+        "description": "High-performance rig for 1440p gaming, streaming, and content creation."
+      },
+      {
+        "@type": "Offer",
+        "name": "Top Tier Hardware",
+        "priceCurrency": "GBP",
+        "price": "0",
+        "description": "Ultimate components for 4K gaming and professional workloads. Custom quoted."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header>
-  <h1>Tailor Made PCs</h1>
-  <p>Custom & Pre-Built Gaming PCs in Herefordshire</p>
-  <p>Email: <a href="mailto:ollyhereford123+PCBuilding@gmail.com">ollyhereford123+PCBuilding@gmail.com</a></p>
-  <p>Phone: +44 7376 609160</p>
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="logo">Tailor Made PCs</a>
+    <nav class="nav">
+      <a href="#prebuilt">Pre‑Builts</a>
+      <a href="#pricing">Build Fees</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="btn btn-primary btn-small">Quote / Buy</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <!-- Prebuilt PCs -->
-  <section id="prebuilt">
-    <h2>Pre-Built PCs</h2>
-    <div class="pc-card">
-      <h3>Budget Friendly</h3>
-      <p>£700 – £800</p>
-      <button onclick="selectBuild('Budget Friendly')">Buy Now</button>
-    </div>
-    <div class="pc-card">
-      <h3>Mid-High Tier</h3>
-      <p>£1200 – £1600</p>
-      <button onclick="selectBuild('Mid-High Tier')">Buy Now</button>
-    </div>
-    <div class="pc-card">
-      <h3>Top Tier Hardware</h3>
-      <p>Custom Price</p>
-      <button onclick="selectBuild('Top Tier Hardware')">Buy Now</button>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Tailor Made PCs</h1>
+      <p>Custom & Pre‑Built Gaming / Creator PCs in Herefordshire.<br>Pay upfront. Pickup only. No shipping risk.</p>
+      <div class="hero-ctas">
+        <a href="#prebuilt" class="btn btn-primary">See Pre-Builts</a>
+        <a href="#contact" class="btn btn-outline">Custom Quote</a>
+      </div>
+      <div class="trust-badges">
+        <span>• 1‑Year Labour Warranty</span>
+        <span>• Transparent Parts Pricing</span>
+        <span>• Live Build Updates</span>
+      </div>
+      <div class="contact-inline">
+        <span>Email: <a href="mailto:ollyhereford123+PCBuilding@gmail.com">ollyhereford123+PCBuilding@gmail.com</a></span>
+        <span>Phone: <a href="tel:+447376609160">+44 7376609160</a></span>
+      </div>
     </div>
   </section>
 
-  <!-- Quote / Purchase Form -->
-  <section id="contact">
-    <h2>Request a Quote or Purchase</h2>
-    <form id="quoteForm" action="https://formspree.io/f/xgvzkgqr" method="POST">
-      <!-- Hidden honeypot -->
-      <input type="text" name="company" id="company" style="display:none" />
+  <!-- PREBUILTS -->
+  <section class="section alt" id="prebuilt">
+    <div class="container">
+      <h2>Pre‑Built PCs</h2>
+      <p class="section-subtitle">Ready-to-buy systems. Pickup in Herefordshire.</p>
 
-      <label>Full Name*</label>
-      <input type="text" name="name" required />
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Budget Friendly</h3>
+          <p class="price">£700–£800</p>
+          <ul>
+            <li>Great for 1080p esports & casual gaming</li>
+            <li>Air cooling</li>
+            <li>3-day stress test</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="selectBuild('Budget Friendly')">Buy / Enquire</button>
+        </div>
 
-      <label>Email*</label>
-      <input type="email" name="email" required />
+        <div class="pricing-card featured">
+          <h3>Mid-High Tier</h3>
+          <p class="price">£1200–£1600</p>
+          <ul>
+            <li>1440p high FPS + streaming</li>
+            <li>AIO or premium air cooling</li>
+            <li>4-day burn-in & benchmarks</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="selectBuild('Mid-High Tier')">Buy / Enquire</button>
+        </div>
 
-      <label>Phone*</label>
-      <input type="tel" name="phone" required />
-
-      <label>Shipping Address*</label>
-      <textarea name="address" required></textarea>
-
-      <label>Selected Build</label>
-      <input type="text" name="selected_build" id="selected_build" readonly />
-
-      <label>Notes / Requirements</label>
-      <textarea name="notes"></textarea>
-
-      <button type="submit">Send</button>
-    </form>
+        <div class="pricing-card">
+          <h3>Top Tier Hardware</h3>
+          <p class="price">Custom quoted</p>
+          <ul>
+            <li>4K gaming / workstation</li>
+            <li>Custom water loops available</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="selectBuild('Top Tier Hardware')">Get Custom Quote</button>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- BUILD FEES (for custom builds) -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2>Build Fees (Custom PCs)</h2>
+      <p class="section-subtitle">Components at cost + fixed build fee. 100% upfront. Pickup only.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Essentials</h3>
+          <p class="price">£99 build fee</p>
+          <ul>
+            <li>Entry–mid builds</li>
+            <li>Air cooling</li>
+            <li>3-day stress testing</li>
+            <li>1-year labour warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block" onclick="selectBuild('Custom – Essentials')">Start</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Performance</h3>
+          <p class="price">£179 build fee</p>
+          <ul>
+            <li>1440p/4K gaming & streaming</li>
+            <li>AIO / premium air</li>
+            <li>BIOS tuning + benchmarks</li>
+            <li>1-year labour warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block" onclick="selectBuild('Custom – Performance')">Most Popular</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Custom Loop / Workstation</h3>
+          <p class="price">From £299 build fee</p>
+          <ul>
+            <li>Hardline water cooling / pro workflows</li>
+            <li>Thermal & noise optimisation</li>
+            <li>Validation report</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block" onclick="selectBuild('Custom – Workstation / Custom Loop')">Get Quote</a>
+        </div>
+      </div>
+      <p class="fineprint">* Component receipts provided. Payment is 100% upfront. Pickup required within 7 days of completion.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="container">
+      <h2>How It Works</h2>
+      <ol class="process">
+        <li><strong>Tell us your needs.</strong> Budget, games/software, aesthetics, shipping details.</li>
+        <li><strong>Get a quote & invoice.</strong> You pay upfront.</li>
+        <li><strong>We build & stress test.</strong></li>
+        <li><strong>Pickup & handover.</strong> We show benchmarks & temps.</li>
+        <li><strong>Aftercare.</strong> 1-year labour warranty + lifetime advice.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT / QUOTE FORM -->
+  <section class="section alt contact" id="contact">
+    <div class="container">
+      <h2>Request a Quote / Buy a Pre‑Built</h2>
+      <p>Fill this in — we’ll email you back. First reply might ask you to verify your email (Formspree).</p>
+
+      <form id="quoteForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST" novalidate>
+        <!-- Honeypot -->
+        <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" style="position:absolute;left:-99999px;height:0;width:0;" aria-hidden="true" />
+
+        <!-- So Formspree subjects are nice -->
+        <input type="hidden" name="_subject" value="Tailor Made PCs – New enquiry" />
+        <!-- Redirect after submit (optional; remove if you want default message) -->
+        <!-- <input type="hidden" name="_next" value="https://zekee-hub.github.io/pcbuilder-website/thanks.html" /> -->
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="q_selected">Selected Build / Tier</label>
+            <input id="q_selected" name="selected_build" type="text" placeholder="(Optional – auto-filled if you clicked a button above)" readonly />
+          </div>
+
+          <div class="form-group">
+            <label for="q_name">Full Name*</label>
+            <input id="q_name" name="name" type="text" required />
+          </div>
+
+          <div class="form-group">
+            <label for="q_email">Email*</label>
+            <input id="q_email" name="email" type="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="q_phone">Phone*</label>
+            <input id="q_phone" name="phone" type="tel" required />
+          </div>
+
+          <div class="form-group">
+            <label for="q_budget">Budget (if custom)</label>
+            <input id="q_budget" name="budget" type="number" min="1" />
+          </div>
+
+          <div class="form-group full">
+            <label for="q_address">Shipping / Pickup Address*</label>
+            <textarea id="q_address" name="address" rows="2" required></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="q_usecase">Use Case*</label>
+            <textarea id="q_usecase" name="usecase" rows="4" placeholder="Games, software, resolution/refresh rate, streaming, etc." required></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="q_notes">Anything else? (RGB, silence focus, case preferences, parts you already own)</label>
+            <textarea id="q_notes" name="notes" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="fineprint">By submitting, you agree to our Terms & Privacy Policy. We require 100% upfront payment. Pickup only.</p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <p>&copy; <span id="year"></span> Tailor Made PCs</p>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Tailor Made PCs. All rights reserved.</p>
+    <p>Email: <a href="mailto:ollyhereford123+PCBuilding@gmail.com">ollyhereford123+PCBuilding@gmail.com</a> • Phone: <a href="tel:+447376609160">+44 7376609160</a></p>
+  </div>
 </footer>
+
+<script src="main.js"></script>
 </body>
 </html>
