@@ -1,297 +1,67 @@
-:root {
-  --bg: #0f1116;
-  --bg-alt: #15181f;
-  --text: #e6e9ef;
-  --muted: #9aa0ac;
-  --brand: #6366f1;
-  --brand-contrast: #ffffff;
-  --border: #232733;
-  --radius: 14px;
-  --container: 1140px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-* { box-sizing: border-box; }
-html, body {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.5;
+  background: #f8f8f8;
+  color: #333;
 }
 
-img { max-width: 100%; display: block; border-radius: var(--radius); }
-
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(15,17,22,0.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
-
-.logo {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.nav a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 1rem;
-}
-.nav a:hover { color: var(--text); }
-
-.hero {
-  padding: 6rem 0 4rem;
-  background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.15), transparent 70%);
+header {
+  background: #222;
+  color: white;
+  padding: 1em;
   text-align: center;
 }
-.hero h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin-bottom: 1rem;
-}
-.hero-ctas {
-  margin: 2rem 0 1rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.trust-badges {
-  margin-top: 1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+
+main {
+  padding: 1em;
+  max-width: 800px;
+  margin: auto;
 }
 
-.section {
-  padding: 4rem 0;
-}
-.section.alt {
-  background: var(--bg-alt);
+h1, h2, h3 {
+  margin-bottom: 0.5em;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.section-subtitle {
-  color: var(--muted);
-  margin-bottom: 2rem;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--bg-alt);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.pricing-card {
-  background: var(--bg);
-  padding: 1.75rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-}
-.pricing-card.featured {
-  border: 2px solid var(--brand);
-  transform: translateY(-4px);
-}
-.pricing-card h3 {
-  margin: 0 0 .5rem;
-}
-.price {
-  font-size: 1.75rem;
-  margin: .5rem 0 1rem;
-}
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem;
-}
-.pricing-card ul li {
-  margin-bottom: .5rem;
-}
-.btn-block { width: 100%; }
-
-.process {
-  counter-reset: item;
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0;
-}
-.process li {
-  position: relative;
-  padding-left: 2.5rem;
-  margin-bottom: 1rem;
-}
-.process li::before {
-  counter-increment: item;
-  content: counter(item);
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--brand);
-  color: var(--brand-contrast);
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-}
-
-.portfolio-grid {
-  gap: 1.25rem;
-}
-.portfolio-item figcaption {
+.pc-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
 }
 
-details {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  margin-bottom: 0.75rem;
-}
-details summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-details p {
-  margin-top: 0.75rem;
-  color: var(--muted);
-}
-
-.contact form {
-  margin-top: 1.5rem;
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-.form-group.full {
-  grid-column: 1 / -1;
-}
-label {
-  margin-bottom: .5rem;
-}
-input, textarea {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.75rem 0.9rem;
-  color: var(--text);
-}
-input:focus, textarea:focus {
-  outline: 2px solid var(--brand);
-  border-color: transparent;
-}
-
-.btn {
-  display: inline-block;
+button {
+  padding: 0.5em 1em;
+  background: #333;
+  color: white;
   border: none;
-  border-radius: var(--radius);
-  padding: 0.9rem 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
   cursor: pointer;
 }
-.btn-small {
-  padding: 0.5rem 0.9rem;
-  font-size: 0.9rem;
-}
-.btn-primary {
-  background: var(--brand);
-  color: var(--brand-contrast);
-}
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--brand);
-  color: var(--brand);
-}
-.btn-primary:hover, .btn-outline:hover {
-  filter: brightness(1.08);
+
+form {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
 }
 
-.fineprint {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 1rem;
+label {
+  display: block;
+  margin-top: 0.5em;
 }
 
-.terms li {
-  margin-bottom: .5rem;
+input, textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.25em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.site-footer {
-  padding: 2rem 0;
-  background: var(--bg-alt);
-  border-top: 1px solid var(--border);
-  margin-top: 4rem;
-}
-.site-footer p {
-  margin: 0 0 0.5rem;
-}
-.footer-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-right: 1rem;
-}
-.footer-nav a:hover {
-  color: var(--text);
-}
-
-/* Utilities */
-@media (prefers-reduced-motion: no-preference) {
-  .btn, .pricing-card {
-    transition: all 120ms ease;
-  }
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #222;
+  color: white;
+  margin-top: 2em;
 }
