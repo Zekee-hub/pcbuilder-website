@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pre-Built PCs - Tailor Made PCs</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Modal Styles (match site theme) */
     .modal {
       display: none;
       position: fixed;
-      z-index: 50;
+      z-index: 1000;
       left: 0; top: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.8);
@@ -17,80 +18,199 @@
       align-items: center;
     }
     .modal-content {
-      background: #1f2937;
-      padding: 20px;
+      background: #111;
+      padding: 2rem;
       border-radius: 8px;
       max-width: 500px;
+      width: 90%;
+      color: #fff;
+      position: relative;
+    }
+    .modal-content label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    .modal-content input, 
+    .modal-content textarea {
       width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #333;
+      background: #222;
+      color: #fff;
+    }
+    .modal-close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #f55;
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
-
-  <!-- Header -->
-  <header class="text-center py-8">
-    <h1 class="text-3xl font-bold">Tailor Made PCs - Pre-Built Systems</h1>
-    <p class="mt-2">Browse our pre-configured systems and choose the perfect fit for your needs.</p>
-    <a href="index.html" class="mt-4 inline-block text-indigo-400 hover:underline">← Back to Home</a>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Tailor Made PCs</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="prebuilts.html" class="active">Pre-Builts</a>
+        <a href="index.html#pricing">Build Fees</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#contact" class="btn btn-primary btn-small">Quote / Buy</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Grid of PCs -->
-  <main class="max-w-6xl mx-auto px-4 py-8 grid md:grid-cols-4 gap-6">
+  <main>
+    <section class="section" id="prebuilt">
+      <div class="container">
+        <h2>Pre-Built PCs</h2>
+        <p class="section-subtitle">Browse ready-to-buy systems. Pickup in Herefordshire.</p>
 
-    <!-- Budget Friendly -->
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-      <img src="images/budget.jpg" alt="Budget PC" class="rounded mb-4">
-      <h2 class="text-xl font-bold mb-2">Budget PC</h2>
-      <p>CPU: Ryzen 5 5600X</p>
-      <p>RAM: 16GB DDR4</p>
-      <p>GPU: RTX 4060</p>
-      <p class="font-semibold mt-2">£799.99</p>
-      <a href="https://www.paypal.com/ncp/payment/6587ALFRZ9XD6" target="_blank" 
-         class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full block text-center">Buy Now</a>
-    </div>
+        <div class="pricing-grid">
 
-    <!-- Mid Tier -->
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-      <img src="images/mid.jpg" alt="Mid Tier PC" class="rounded mb-4">
-      <h2 class="text-xl font-bold mb-2">Mid Tier Build</h2>
-      <p>CPU: Ryzen 5 7600X</p>
-      <p>RAM: 32GB DDR5</p>
-      <p>GPU: RTX 5070 Ti</p>
-      <p class="font-semibold mt-2">£1499.99</p>
-      <a href="https://www.paypal.com/ncp/payment/NFCTQXU5Q8RTU" target="_blank" 
-         class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full block text-center">Buy Now</a>
-    </div>
+          <!-- Budget PC -->
+          <div class="pricing-card">
+            <h3>Budget PC</h3>
+            <p class="price">£799.99</p>
+            <ul>
+              <li>CPU: Ryzen 5 5600X</li>
+              <li>RAM: 16GB DDR4</li>
+              <li>GPU: RTX 4060</li>
+              <li>Storage: 1TB M.2</li>
+            </ul>
+            <button class="btn btn-primary btn-block buy-btn"
+              data-build="Budget PC"
+              data-price="£799.99"
+              data-paypal="https://www.paypal.com/ncp/payment/6587ALFRZ9XD6">
+              Buy Now
+            </button>
+          </div>
 
-    <!-- High Tier -->
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-      <img src="images/high.jpg" alt="High Tier PC" class="rounded mb-4">
-      <h2 class="text-xl font-bold mb-2">High Tier Build</h2>
-      <p>CPU: Ryzen 7 9800X3D</p>
-      <p>RAM: 64GB DDR5</p>
-      <p>GPU: RTX 5080</p>
-      <p class="font-semibold mt-2">£2499.99</p>
-      <a href="https://www.paypal.com/ncp/payment/6BL5LJ8UVBVRY" target="_blank" 
-         class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full block text-center">Buy Now</a>
-    </div>
+          <!-- Mid Tier -->
+          <div class="pricing-card featured">
+            <h3>Mid Tier Build</h3>
+            <p class="price">£1499.99</p>
+            <ul>
+              <li>CPU: Ryzen 5 7600X</li>
+              <li>RAM: 32GB DDR5</li>
+              <li>GPU: RTX 5070 Ti</li>
+              <li>Storage: 2TB M.2</li>
+            </ul>
+            <button class="btn btn-primary btn-block buy-btn"
+              data-build="Mid Tier Build"
+              data-price="£1499.99"
+              data-paypal="https://www.paypal.com/ncp/payment/NFCTQXU5Q8RTU">
+              Buy Now
+            </button>
+          </div>
 
-    <!-- Top Tier -->
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-      <img src="images/top.jpg" alt="Top Tier PC" class="rounded mb-4">
-      <h2 class="text-xl font-bold mb-2">Top Tier Build</h2>
-      <p>CPU: Ryzen 9 9950X3D</p>
-      <p>RAM: 96GB DDR5</p>
-      <p>GPU: RTX 5090</p>
-      <p class="font-semibold mt-2">£4499.99</p>
-      <a href="https://www.paypal.com/ncp/payment/A9WZXTUFGCHMG" target="_blank" 
-         class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full block text-center">Buy Now</a>
-    </div>
+          <!-- High Tier -->
+          <div class="pricing-card">
+            <h3>High Tier Build</h3>
+            <p class="price">£2499.99</p>
+            <ul>
+              <li>CPU: Ryzen 7 9800X3D</li>
+              <li>RAM: 64GB DDR5</li>
+              <li>GPU: RTX 5080</li>
+              <li>Storage: 2TB M.2 ×2</li>
+            </ul>
+            <button class="btn btn-primary btn-block buy-btn"
+              data-build="High Tier Build"
+              data-price="£2499.99"
+              data-paypal="https://www.paypal.com/ncp/payment/6BL5LJ8UVBVRY">
+              Buy Now
+            </button>
+          </div>
 
+          <!-- Top Tier -->
+          <div class="pricing-card">
+            <h3>Top Tier Build</h3>
+            <p class="price">£4499.99</p>
+            <ul>
+              <li>CPU: Ryzen 9 9950X3D</li>
+              <li>RAM: 96GB DDR5</li>
+              <li>GPU: RTX 5090</li>
+              <li>Storage: 2TB M.2 ×2</li>
+            </ul>
+            <button class="btn btn-primary btn-block buy-btn"
+              data-build="Top Tier Build"
+              data-price="£4499.99"
+              data-paypal="https://www.paypal.com/ncp/payment/A9WZXTUFGCHMG">
+              Buy Now
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 border-t border-gray-800 text-sm mt-10">
-    <p>&copy; 2025 Tailor Made PCs. All rights reserved.</p>
+  <!-- Modal Form -->
+  <div id="buyModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="modal-close">✖</span>
+      <h2>Complete Your Purchase</h2>
+      <form id="buyForm" action="xwkjqzqz" method="POST">
+        <input type="hidden" name="selected_build" id="buildName">
+        <input type="hidden" name="price" id="buildPrice">
+
+        <label for="name">Full Name*</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email*</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">Phone*</label>
+        <input id="phone" name="phone" type="tel" required>
+
+        <label for="address">Address*</label>
+        <textarea id="address" name="address" rows="2" required></textarea>
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">Submit & Continue to Payment</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Tailor Made PCs. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    const modal = document.getElementById("buyModal");
+    const closeModal = document.getElementById("closeModal");
+    const buyBtns = document.querySelectorAll(".buy-btn");
+    const buildName = document.getElementById("buildName");
+    const buildPrice = document.getElementById("buildPrice");
+    const form = document.getElementById("buyForm");
+
+    buyBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buildName.value = btn.dataset.build;
+        buildPrice.value = btn.dataset.price;
+        form.dataset.paypal = btn.dataset.paypal;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeModal.addEventListener("click", () => modal.style.display = "none");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(() => {
+        window.location.href = form.dataset.paypal;
+      });
+    });
+  </script>
 </body>
 </html>
