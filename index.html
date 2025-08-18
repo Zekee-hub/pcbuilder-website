@@ -268,9 +268,17 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; <span id="year"></span> Tailor Made PCs. All rights reserved.</p>
+    <p>
+      &copy; <span id="year"></span> Tailor Made PCs. All rights reserved. | 
+      <a href="legal.html">Privacy & Terms</a>
+    </p>
   </div>
 </footer>
+
+<script>
+  // auto-update year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 <script src="main.js"></script>
 </body>
